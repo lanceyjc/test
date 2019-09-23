@@ -1,0 +1,81 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "testcases",
+    "children" : [ {
+      "name" : "test_about.TestAbout.test_mobile_info",
+      "uid" : "d571a5496e5b203b",
+      "parentUid" : "b51346658ccdb9db01a6b5f6c12deab1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1569167116171,
+        "stop" : 1569167134028,
+        "duration" : 17857
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_display.TestDisplay.test_mobile_search[\\u7f51\\u7edc]",
+      "uid" : "4721ee1d042056bc",
+      "parentUid" : "b51346658ccdb9db01a6b5f6c12deab1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1569167135289,
+        "stop" : 1569167152636,
+        "duration" : 17347
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_network.TestNetwork.test_mobile_network_2g",
+      "uid" : "88f5f98fca583308",
+      "parentUid" : "b51346658ccdb9db01a6b5f6c12deab1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1569167153826,
+        "stop" : 1569167167375,
+        "duration" : 13549
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_network.TestNetwork.test_mobile_network_3g",
+      "uid" : "a35b5a07cc25c990",
+      "parentUid" : "b51346658ccdb9db01a6b5f6c12deab1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1569167168612,
+        "stop" : 1569167182289,
+        "duration" : 13677
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_search.TestSearch.test_search[1]",
+      "uid" : "e0c144e0d02f9c3a",
+      "parentUid" : "b51346658ccdb9db01a6b5f6c12deab1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1569167183573,
+        "stop" : 1569167199722,
+        "duration" : 16149
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_search.TestSearch.test_search[2]",
+      "uid" : "eeb4ecf80337be27",
+      "parentUid" : "b51346658ccdb9db01a6b5f6c12deab1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1569167200907,
+        "stop" : 1569167216504,
+        "duration" : 15597
+      },
+      "flaky" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "b51346658ccdb9db01a6b5f6c12deab1"
+  } ]
+}

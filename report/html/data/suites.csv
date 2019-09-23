@@ -1,0 +1,7 @@
+"Status","Name","Duration in ms","Description"
+"passed","testcases.test_display.TestDisplay.test_mobile_search[\u7f51\u7edc]","17347",""
+"passed","testcases.test_search.TestSearch.test_search[1]","16149",""
+"passed","testcases.test_network.TestNetwork.test_mobile_network_3g","13677",""
+"passed","testcases.test_about.TestAbout.test_mobile_info","17857",""
+"passed","testcases.test_network.TestNetwork.test_mobile_network_2g","13549",""
+"passed","testcases.test_search.TestSearch.test_search[2]","15597",""
