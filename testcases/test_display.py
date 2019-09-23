@@ -12,15 +12,15 @@ class TestDisplay:
         self.display_page.driver.quit()
         del self.display_page
 
-    @allure.testcase('测试搜索功能')
-    @allure.feature('测试用例：搜索')
+    @allure.MASTER_HELPER.testcase('测试搜索功能')
+    @allure.MASTER_HELPER.feature('测试用例：搜索')
     @pytest.mark.parametrize('a',['网络'])
     def test_mobile_search(self, a):
-        allure.attach('点击放大镜')
+        allure.MASTER_HELPER.attach('点击放大镜')
         self.display_page.click_search()
-        allure.attach('输入数据')
+        allure.MASTER_HELPER.attach('输入数据：网络')
         self.display_page.input_search_text(a)
         self.display_page.screen_shot()
         self.display_page.clear_search_text()
-        allure.attach('点击返回')
+        allure.MASTER_HELPER.attach('点击返回')
         self.display_page.click_back()
