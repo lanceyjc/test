@@ -1,4 +1,4 @@
-import pytest
+import pytest,allure
 from base.base_driver import android_driver
 from page.display_page import DisplayPage
 
@@ -12,13 +12,15 @@ class TestDisplay:
         self.display_page.driver.quit()
         del self.display_page
 
+    @allure.testcase('测试搜索功能')
+    @allure.feature('测试用例：搜索')
     @pytest.mark.parametrize('a',['网络'])
     def test_mobile_search(self, a):
-        # 点击放大镜
+        allure.attach('点击放大镜')
         self.display_page.click_search()
-        # 输入数据
+        allure.attach('输入数据')
         self.display_page.input_search_text(a)
         self.display_page.screen_shot()
         self.display_page.clear_search_text()
-        # 点击返回
+        allure.attach('点击返回')
         self.display_page.click_back()
