@@ -6,8 +6,8 @@
 def android_driver():
     desired_caps = {'platformName': 'Android',
                     'platformVersion': '5.1',
-                    'appPackage': 'com.android.settings',
-                    'appActivity': '.Settings',
+                    'appPackage': 'com.tpshop.malls',
+                    'appActivity': '.SPMainActivity',
                     'deviceName': '192.168.56.101:5555',
                     'unicodeKeyboard': True,
                     'resetKeyboard': True}
