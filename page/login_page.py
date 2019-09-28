@@ -11,6 +11,9 @@ class LoginPage(PageAction):
 
     def __init__(self, driver):
         PageAction.__init__(self, driver)
+        self.__jump_2_login_page()
+
+    def __jump_2_login_page(self):
         self.click(self.my_button)
         self.click(self.user_icon)
 
