@@ -5,6 +5,10 @@ from base.base_yaml import get_yaml_data
 
 login_data = get_yaml_data('login_data')
 
+allure.MASTER_HELPER.environment(app_package='com.tpshop.malls')
+allure.MASTER_HELPER.environment(app_activity='.SPMainActivity')
+allure.MASTER_HELPER.environment(platform_name='Android')
+
 
 class TestLogin:
     def setup(self):
@@ -14,11 +18,8 @@ class TestLogin:
         self.login_page.driver.quit()
         del self.login_page
 
-    @allure.MASTER_HELPER.environment(app_package='com.tpshop.malls')
-    @allure.MASTER_HELPER.environment(app_activity='.SPMainActivity')
-    @allure.MASTER_HELPER.environment(platform_name='Android')
-    @allure.MASTER_HELPER.feature('测试用例：登录功能')
     @pytest.mark.parametrize('account', login_data['test_login'])
+    @allure.MASTER_HELPER.feature('测试用例：登录功能')
     def test_login(self, account):
         commit = account[0]
         user = account[1]
