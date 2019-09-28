@@ -45,14 +45,14 @@ class PageAction:
         self.driver.swipe(self.__width * start_x, self.__height * start_y,
                           self.__width * end_x, self.__height * end_y, duration)
 
-    def scroll(self, origin_ele_loc, destination_ele_loc, duration=None):
-        origin_ele = self.element(origin_ele_loc)
-        destination_ele = self.element(destination_ele_loc)
+    def scroll(self, origin_ele_loc, destination_ele_loc, duration=None, swipe=False):
+        origin_ele = self.element(origin_ele_loc, swipe)
+        destination_ele = self.element(destination_ele_loc, swipe)
         self.driver.scroll(origin_ele, destination_ele, duration)
 
-    def drag_and_drop(self, origin_ele_loc, destination_ele_loc):
-        origin_ele = self.element(origin_ele_loc)
-        destination_ele = self.element(destination_ele_loc)
+    def drag_and_drop(self, origin_ele_loc, destination_ele_loc, swipe=False):
+        origin_ele = self.element(origin_ele_loc, swipe)
+        destination_ele = self.element(destination_ele_loc, swipe)
         self.driver.drag_and_drop(origin_ele, destination_ele)
 
     def swipe_page(self):
@@ -89,7 +89,7 @@ class PageAction:
                 else:
                     raise NoSuchElementException
 
-    def elements(self, kw, swipe=True):
+    def elements(self, kw, swipe):
         """
         find_elements
         :param swipe: bool, swipe page or not
@@ -166,7 +166,7 @@ class PageAction:
             # support multiple conditions
             for fs in args:
                 feature = fs.split(',')
-                xpath = self.__xpath_feature(xpath, feature) + 'and'
-            return xpath_start + xpath[0:-3] + xpath_end
+                xpath = self.__xpath_feature(xpath, feature) + 'and '
+            return xpath_start + xpath[0:-4] + xpath_end
         else:
             raise ValueError("check the feature")
