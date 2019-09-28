@@ -25,5 +25,5 @@ class TestLogin:
         self.login_page.input_user(user)
         allure.MASTER_HELPER.attach('输入密码', password)
         self.login_page.input_password(password)
-        allure.MASTER_HELPER.step('点击登录')
+        allure.MASTER_HELPER.attach('点击登录','')
         self.login_page.click_login_button()
