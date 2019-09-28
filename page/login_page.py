@@ -4,7 +4,7 @@ from base.base_page import PageAction
 
 class LoginPage(PageAction):
     my_button = {'xpath': 'text, 我的'}
-    login_icon = {'id': 'com.tpshop.malls:id/head_img'}
+    user_icon = {'id': 'com.tpshop.malls:id/head_img'}
     user_text = {'id': 'com.tpshop.malls:id/mobile_et'}
     password_text = {'id': 'com.tpshop.malls:id/pwd_et'}
     login_button = {'id': 'com.tpshop.malls:id/login_tv'}
@@ -12,7 +12,7 @@ class LoginPage(PageAction):
     def __init__(self, driver):
         PageAction.__init__(self, driver)
         self.click(self.my_button)
-        self.click(self.login_icon)
+        self.click(self.user_icon)
 
     def input_user(self, text):
         self.input_text(self.user_text, text)
