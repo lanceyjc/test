@@ -14,15 +14,21 @@ class TestLogin:
         self.login_page.driver.quit()
         del self.login_page
 
-    @pytest.mark.parametrize('account', login_data['test_login'])
+    @allure.MASTER_HELPER.environment(app_package='com.tpshop.malls')
+    @allure.MASTER_HELPER.environment(app_activity='.SPMainActivity')
+    @allure.MASTER_HELPER.environment(platform_name='Android')
     @allure.MASTER_HELPER.feature('测试用例：登录功能')
+    @pytest.mark.parametrize('account', login_data['test_login'])
     def test_login(self, account):
         commit = account[0]
         user = account[1]
         password = account[2]
         allure.MASTER_HELPER.description(commit)
+        # enter the user
         allure.MASTER_HELPER.attach('输入账号', user)
         self.login_page.input_user(user)
+        # enter the password
         allure.MASTER_HELPER.attach('输入密码', password)
         self.login_page.input_password(password)
+        # click the login button
         self.login_page.click_login_button()
