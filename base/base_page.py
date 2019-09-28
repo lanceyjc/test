@@ -21,24 +21,24 @@ class PageAction:
         self.__height = self.driver.get_window_size()['height']
 
     # 常用操作
-    def click(self, loc):
-        self.element(loc).click()
+    def click(self, loc, swipe=False):
+        self.element(loc, swipe).click()
 
-    def input_text(self, loc, text):
-        self.element(loc).send_keys(text)
+    def input_text(self, loc, text, swipe=False):
+        self.element(loc, swipe).send_keys(text)
 
-    def clear_text(self, loc):
-        self.element(loc).clear()
+    def clear_text(self, loc, swipe=False):
+        self.element(loc, swipe).clear()
 
     # 获取元素属性
-    def get_text(self, loc):
-        return self.element(loc).text
+    def get_text(self, loc, swipe=False):
+        return self.element(loc, swipe).text
 
-    def get_attribute(self, loc, value):
-        return self.element(loc).get_attribute(value)
+    def get_attribute(self, loc, value, swipe=False):
+        return self.element(loc, swipe).get_attribute(value)
 
-    def get_location(self, loc):
-        return self.element(loc).location
+    def get_location(self, loc, swipe=False):
+        return self.element(loc, swipe).location
 
     # 滑动操作
     def swipe(self, start_x, start_y, end_x, end_y, duration=None):
@@ -63,7 +63,7 @@ class PageAction:
         self.driver.keyevent(4)
 
     # 元素定位
-    def element(self, kw, swipe=True):
+    def element(self, kw, swipe):
         """
         find_element
         :param swipe: bool, swipe page or not

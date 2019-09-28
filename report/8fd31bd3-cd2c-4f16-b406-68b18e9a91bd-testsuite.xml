@@ -1,0 +1,191 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1569692624827" stop="1569692743413">
+  <name>testcases</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1569692624827" status="passed" stop="1569692645887">
+      <description>输入正确账号和正确密码</description>
+      <name>test_login.TestLogin.test_login[account0]</name>
+      <attachments>
+        <attachment source="63fa78ea-5386-476b-b67d-a746bc69ba86-attachment.txt" title="输入账号" type="text/plain"/>
+        <attachment source="8c5a4cf4-4a73-459d-a5b4-70b47b472994-attachment.txt" title="输入密码" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="feature" value="测试用例：登录功能"/>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="25680-MainThread"/>
+        <label name="host" value="DESKTOP-QCTRQ3R"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1569692647121" status="passed" stop="1569692666601">
+      <description>输入账号后加空格和正确密码</description>
+      <name>test_login.TestLogin.test_login[account1]</name>
+      <attachments>
+        <attachment source="dc370237-36ed-4b6c-9254-c580b7102c32-attachment.txt" title="输入账号" type="text/plain"/>
+        <attachment source="81e378d5-68eb-41cb-8124-61d855718632-attachment.txt" title="输入密码" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="feature" value="测试用例：登录功能"/>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="25680-MainThread"/>
+        <label name="host" value="DESKTOP-QCTRQ3R"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1569692667807" status="passed" stop="1569692689284">
+      <description>输入账号中间加空格和正确密码</description>
+      <name>test_login.TestLogin.test_login[account2]</name>
+      <attachments>
+        <attachment source="5f0f12f5-194f-4d77-b4fe-04ec0e559e50-attachment.txt" title="输入账号" type="text/plain"/>
+        <attachment source="6cc732a4-01a6-4759-973a-93a1134a51a9-attachment.txt" title="输入密码" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="feature" value="测试用例：登录功能"/>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="25680-MainThread"/>
+        <label name="host" value="DESKTOP-QCTRQ3R"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1569692690468" status="passed" stop="1569692722432">
+      <description>输入错误账号和正确密码</description>
+      <name>test_login.TestLogin.test_login[account3]</name>
+      <failure>
+        <message>NoSuchElementException: Message: None
+</message>
+        <stack-trace>self = &lt;page.login_page.LoginPage object at 0x000002176F69E5F8&gt;, kw = {'id': 'com.tpshop.malls:id/head_img'}, swipe = False
+
+    def element(self, kw, swipe):
+        """
+        find_element
+        :param swipe: bool, swipe page or not
+        :param kw: 'locator':'value'
+        :return: element
+        """
+        if not kw:
+            raise ValueError("Please specify a locator")
+        if len(kw) &gt; 1:
+            raise ValueError("Please specify only one locator")
+        k, v = next(iter(kw.items()))
+        if k == 'xpath':
+            v = self.make_xpath_feature(v)
+        while True:
+            try:
+&gt;               return WebDriverWait(self.driver, 1, 0.2).until(lambda x: x.find_element(self._LOCATOR_MAP[k], v))
+
+base\base_page.py:82: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;selenium.webdriver.support.wait.WebDriverWait (session="36e8e2e6-e0b6-4ee8-ade4-dd047809d164")&gt;
+method = &lt;function PageAction.element.&lt;locals&gt;.&lt;lambda&gt; at 0x000002176F669F28&gt;, message = ''
+
+    def until(self, method, message=''):
+        """Calls the method provided with the driver as an argument until the \
+        return value is not False."""
+        screen = None
+        stacktrace = None
+    
+        end_time = time.time() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, 'screen', None)
+                stacktrace = getattr(exc, 'stacktrace', None)
+            time.sleep(self._poll)
+            if time.time() &gt; end_time:
+                break
+&gt;       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message:
+
+..\test\venv\lib\site-packages\selenium\webdriver\support\wait.py:80: TimeoutException
+
+During handling of the above exception, another exception occurred:
+
+self = &lt;testcases.test_login.TestLogin object at 0x000002176F69EB00&gt;
+
+    def setup(self):
+&gt;       self.login_page = LoginPage(android_driver())
+
+testcases\test_login.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+page\login_page.py:14: in __init__
+    self.__jump_2_login_page()
+page\login_page.py:18: in __jump_2_login_page
+    self.click(self.user_icon)
+base\base_page.py:25: in click
+    self.element(loc, swipe).click()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;page.login_page.LoginPage object at 0x000002176F69E5F8&gt;, kw = {'id': 'com.tpshop.malls:id/head_img'}, swipe = False
+
+    def element(self, kw, swipe):
+        """
+        find_element
+        :param swipe: bool, swipe page or not
+        :param kw: 'locator':'value'
+        :return: element
+        """
+        if not kw:
+            raise ValueError("Please specify a locator")
+        if len(kw) &gt; 1:
+            raise ValueError("Please specify only one locator")
+        k, v = next(iter(kw.items()))
+        if k == 'xpath':
+            v = self.make_xpath_feature(v)
+        while True:
+            try:
+                return WebDriverWait(self.driver, 1, 0.2).until(lambda x: x.find_element(self._LOCATOR_MAP[k], v))
+            except TimeoutException:
+                if swipe:
+                    before_swipe = self.driver.page_source
+                    self.swipe_page()
+                    if self.driver.page_source == before_swipe:
+                        raise NoSuchElementException
+                else:
+&gt;                   raise NoSuchElementException
+E                   selenium.common.exceptions.NoSuchElementException: Message: None
+
+base\base_page.py:90: NoSuchElementException</stack-trace>
+      </failure>
+      <attachments>
+        <attachment source="6df7fa26-429f-4b97-a96a-4683218e9e08-attachment.txt" title="输入账号" type="text/plain"/>
+        <attachment source="f318a2d4-9a46-4ce3-9d92-0bf08166c586-attachment.txt" title="输入密码" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="feature" value="测试用例：登录功能"/>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="25680-MainThread"/>
+        <label name="host" value="DESKTOP-QCTRQ3R"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1569692723677" status="passed" stop="1569692743413">
+      <description>输入正确账号和错误密码</description>
+      <name>test_login.TestLogin.test_login[account4]</name>
+      <attachments>
+        <attachment source="964f0c7a-4944-43e5-8192-cffa08954a18-attachment.txt" title="输入账号" type="text/plain"/>
+        <attachment source="606ae261-dd11-4896-9eed-3084a39a5578-attachment.txt" title="输入密码" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="feature" value="测试用例：登录功能"/>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="25680-MainThread"/>
+        <label name="host" value="DESKTOP-QCTRQ3R"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

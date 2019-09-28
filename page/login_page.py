@@ -3,7 +3,7 @@ from base.base_page import PageAction
 
 
 class LoginPage(PageAction):
-    my_button = {'xpath': 'text, 我的'}
+    my_button = {'xpath': ('resource-id, com.tpshop.malls:id/mine_tv, 1', 'text, 我的, 1')}
     user_icon = {'id': 'com.tpshop.malls:id/head_img'}
     user_text = {'id': 'com.tpshop.malls:id/mobile_et'}
     password_text = {'id': 'com.tpshop.malls:id/pwd_et'}
