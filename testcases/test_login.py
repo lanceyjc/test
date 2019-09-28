@@ -16,11 +16,11 @@ class TestLogin:
 
     @pytest.mark.parametrize('account', login_data['test_login'])
     @allure.MASTER_HELPER.feature('测试用例：登录功能')
-    @allure.MASTER_HELPER.story('{1}[0]')
     def test_login(self, account):
         commit = account[0]
         user = account[1]
         password = account[2]
+        allure.MASTER_HELPER.description(commit)
         allure.MASTER_HELPER.attach('输入账号', user)
         self.login_page.input_user(user)
         allure.MASTER_HELPER.attach('输入密码', password)
