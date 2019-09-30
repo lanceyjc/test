@@ -1,5 +1,5 @@
 <ns0:environment xmlns:ns0="urn:model.commons.qatools.yandex.ru">
-  <id>063deebf-089d-4851-be51-e4784c7a93ff</id>
+  <id>0cc73f5d-0ed7-4bd3-80c1-f0e5e3301ceb</id>
   <name>Allure environment parameters</name>
   <parameter>
     <key>app_package</key>
@@ -15,5 +15,15 @@
     <key>platform_name</key>
     <name>platform_name</name>
     <value>Android</value>
+  </parameter>
+  <parameter>
+    <key>platform_version</key>
+    <name>platform_version</name>
+    <value>5.1</value>
+  </parameter>
+  <parameter>
+    <key>device_name</key>
+    <name>device_name</name>
+    <value>192.168.182.105:5555</value>
   </parameter>
 </ns0:environment>

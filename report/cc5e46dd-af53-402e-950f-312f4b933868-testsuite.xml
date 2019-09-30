@@ -1,0 +1,24 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1569839681917" stop="1569839699817">
+  <name>testcases</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1569839681917" status="passed" stop="1569839699817">
+      <description>输入正确账号和正确密码</description>
+      <name>test_login.TestLogin.test_login[account0]</name>
+      <attachments>
+        <attachment source="4231eb3e-77af-4a36-a3b7-7c7427f092d6-attachment.txt" title="输入账号" type="text/plain"/>
+        <attachment source="ac531cb5-7178-44a9-b72a-df05557379d8-attachment.txt" title="输入密码" type="text/plain"/>
+        <attachment source="ba2a5b5f-29b4-4408-8b16-97caebf0b7d5-attachment.txt" title="断言toast" type="text/plain"/>
+      </attachments>
+      <labels>
+        <label name="feature" value="测试用例：登录功能"/>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="11656-MainThread"/>
+        <label name="host" value="DESKTOP-QCTRQ3R"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

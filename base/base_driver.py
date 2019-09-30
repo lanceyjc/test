@@ -1,7 +1,7 @@
 """
-存放手机连接的参数
+存放手机连接的参数和测试环境配置
 """
-# 'automationName': 'Uiautomator2',
+import allure
 
 
 def android_driver():
@@ -27,3 +27,12 @@ def ios_driver():
                     'resetKeyboard': True}
     url = 'http://localhost:4723/wd/hub'
     return url, desired_caps
+
+
+def env_config():
+    desired_caps = android_driver()[1]
+    allure.MASTER_HELPER.environment(app_package=desired_caps['appPackage'])
+    allure.MASTER_HELPER.environment(app_activity=desired_caps['appActivity'])
+    allure.MASTER_HELPER.environment(platform_name=desired_caps['platformName'])
+    allure.MASTER_HELPER.environment(platform_version=desired_caps['platformVersion'])
+    allure.MASTER_HELPER.environment(device_name=desired_caps['deviceName'])
