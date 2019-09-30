@@ -25,10 +25,3 @@ class LoginPage(PageAction):
 
     def click_login_button(self):
         self.click(self.login_button)
-
-    def is_login(self, text):
-        try:
-            self.find_toast(text)
-            return True
-        except TimeoutError:
-            return False

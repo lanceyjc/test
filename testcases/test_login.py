@@ -21,18 +21,19 @@ class TestLogin:
     @pytest.mark.parametrize('account', login_data['test_login'])
     @allure.MASTER_HELPER.feature('测试用例：登录功能')
     def test_login(self, account):
-        commit = account[0]
-        user = account[1]
-        password = account[2]
-        toast = account[3]
-        allure.MASTER_HELPER.description(commit)
-        # enter the user
-        allure.MASTER_HELPER.attach('输入账号', user)
-        self.login_page.input_user(user)
+        test_num = account['test_num']
+        commit = account['commit']
+        username = account['username']
+        password = account['password']
+        toast = account['toast']
+        allure.MASTER_HELPER.description('{0}: {1}'.format(test_num, commit))
+        # enter the username
+        allure.MASTER_HELPER.attach('输入账号', username)
+        self.login_page.input_user(username)
         # enter the password
         allure.MASTER_HELPER.attach('输入密码', password)
         self.login_page.input_password(password)
         # click the login button
         self.login_page.click_login_button()
         allure.MASTER_HELPER.attach('断言toast', toast)
-        assert self.login_page.is_login(toast)
+        assert self.login_page.is_toast_exist(toast)

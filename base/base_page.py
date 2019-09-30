@@ -31,6 +31,13 @@ class PageAction:
     def clear_text(self, loc, swipe=False):
         self.element(loc, swipe).clear()
 
+    def is_toast_exist(self, text):
+        try:
+            self.find_toast(text)
+            return True
+        except TimeoutError:
+            return False
+
     # 权限允许
     def click_allow_button(self, click_times):
         for i in range(click_times):
@@ -167,3 +174,7 @@ class PageAction:
             return xpath_start + xpath[0:-4] + xpath_end
         else:
             raise ValueError("check the feature")
+
+
+if __name__ == '__main__':
+    pass
