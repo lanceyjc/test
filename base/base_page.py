@@ -19,6 +19,7 @@ class PageAction:
                              'class_name': By.CLASS_NAME}
         self.__width = self.driver.get_window_size()['width']
         self.__height = self.driver.get_window_size()['height']
+        self.allow_button = {'id': 'com.android.packageinstaller:id/permission_allow_button'}
 
     # 常用操作
     def click(self, loc, swipe=False):
@@ -29,6 +30,11 @@ class PageAction:
 
     def clear_text(self, loc, swipe=False):
         self.element(loc, swipe).clear()
+
+    # 权限允许
+    def click_allow_button(self, click_times):
+        for i in range(click_times):
+            self.click(self.allow_button)
 
     # 获取元素属性
     def get_text(self, loc, swipe=False):
@@ -60,12 +66,15 @@ class PageAction:
 
     # 常用KeyCode
     def mobile_back_key(self):
-        self.driver.keyevent(4)
+        self.driver.press_keycode(4)
 
     # 元素定位
-    def element(self, kw, swipe):
+    def element(self, kw, swipe, timeout=5.0, frequency=0.5, multi_elem=False):
         """
         find_element
+        :param frequency: element search frequency
+        :param timeout: element wait time
+        :param multi_elem: return one element or a element list
         :param swipe: bool, swipe page or not
         :param kw: 'locator':'value'
         :return: element
@@ -79,7 +88,12 @@ class PageAction:
             v = self.make_xpath_feature(v)
         while True:
             try:
-                return WebDriverWait(self.driver, 1, 0.2).until(lambda x: x.find_element(self._LOCATOR_MAP[k], v))
+                if not multi_elem:
+                    return WebDriverWait(self.driver, timeout, frequency).\
+                        until(lambda x: x.find_element(self._LOCATOR_MAP[k], v))
+                else:
+                    return WebDriverWait(self.driver, timeout, frequency).\
+                        until(lambda x: x.find_elements(self._LOCATOR_MAP[k], v))
             except TimeoutException:
                 if swipe:
                     before_swipe = self.driver.page_source
@@ -89,31 +103,14 @@ class PageAction:
                 else:
                     raise NoSuchElementException
 
-    def elements(self, kw, swipe):
-        """
-        find_elements
-        :param swipe: bool, swipe page or not
-        :param kw: 'locator':'value'
-        :return: element list
-        """
-        if not kw:
-            raise ValueError("Please specify a locator")
-        if len(kw) > 1:
-            raise ValueError("Please specify only one locator")
-        k, v = next(iter(kw.items()))
-        if k == 'xpath':
-            v = self.make_xpath_feature(v)
-        while True:
-            try:
-                return WebDriverWait(self.driver, 1, 0.2).until(lambda x: x.find_elements(self._LOCATOR_MAP[k], v))
-            except TimeoutException:
-                if swipe:
-                    before_swipe = self.driver.page_source
-                    self.swipe_page()
-                    if self.driver.page_source == before_swipe:
-                        raise NoSuchElementException
-                else:
-                    raise NoSuchElementException
+    def find_toast(self, text):
+        xpath_loc = {'xpath': self.make_xpath_feature('text,' + text)}
+        try:
+            toast = self.element(xpath_loc, swipe=False, timeout=3.0, frequency=0.2)
+        except TimeoutError:
+            raise NoSuchElementException
+        else:
+            return toast.text
 
     # 截图
     def screen_shot(self):
@@ -141,9 +138,9 @@ class PageAction:
         value_index = 1
         option_index = 2
         if len(feature) == 2 or (len(feature) == 3 and feature[option_index].strip() == '0'):
-            return xpath + 'contains(@' + feature[key_index].strip() + ',"' + feature[value_index].strip() + '")'
+            return '{0}contains(@{1},"{2}")'.format(xpath, feature[key_index].strip(), feature[value_index].strip())
         elif len(feature) == 3 and feature[option_index].strip() == '1':
-            return xpath + '@' + feature[key_index].strip() + '="' + feature[value_index].strip() + '"'
+            return '{0}@{1}="{2}"'.format(xpath, feature[key_index].strip(), feature[value_index].strip())
         else:
             raise ValueError('check the feature')
 

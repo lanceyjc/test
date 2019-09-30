@@ -1,6 +1,7 @@
 """
 存放手机连接的参数
 """
+# 'automationName': 'Uiautomator2',
 
 
 def android_driver():
@@ -8,9 +9,10 @@ def android_driver():
                     'platformVersion': '5.1',
                     'appPackage': 'com.tpshop.malls',
                     'appActivity': '.SPMainActivity',
-                    'deviceName': '192.168.56.101:5555',
+                    'deviceName': '192.168.182.105:5555',
                     'unicodeKeyboard': True,
-                    'resetKeyboard': True}
+                    'resetKeyboard': True,
+                    'automationName': 'Uiautomator2'}
     url = 'http://localhost:4723/wd/hub'
     return url, desired_caps
 

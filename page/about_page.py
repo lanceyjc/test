@@ -7,7 +7,7 @@ class AboutPage(PageAction):
 
     def __init__(self, driver):
         PageAction.__init__(self, driver)
-        self.click(self.about_button)
+        self.click(self.about_button, swipe=True)
 
     def click_mobile_info(self):
         self.click(self.mobile_info_button)

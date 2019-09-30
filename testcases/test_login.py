@@ -1,7 +1,8 @@
-import allure, pytest
+import allure
+import pytest
 from base.base_driver import android_driver
-from page.login_page import LoginPage
 from base.base_yaml import get_yaml_data
+from page.login_page import LoginPage
 
 login_data = get_yaml_data('login_data')
 
@@ -24,6 +25,7 @@ class TestLogin:
         commit = account[0]
         user = account[1]
         password = account[2]
+        toast = account[3]
         allure.MASTER_HELPER.description(commit)
         # enter the user
         allure.MASTER_HELPER.attach('输入账号', user)
@@ -33,3 +35,5 @@ class TestLogin:
         self.login_page.input_password(password)
         # click the login button
         self.login_page.click_login_button()
+        allure.MASTER_HELPER.attach('断言toast', toast)
+        assert self.login_page.is_login(toast)

@@ -10,6 +10,7 @@ class LoginPage(PageAction):
 
     def __init__(self, driver):
         PageAction.__init__(self, driver)
+        # self.click_allow_button()
         self.__jump_2_login_page()
 
     def __jump_2_login_page(self):
@@ -24,3 +25,10 @@ class LoginPage(PageAction):
 
     def click_login_button(self):
         self.click(self.login_button)
+
+    def is_login(self, text):
+        try:
+            self.find_toast(text)
+            return True
+        except TimeoutError:
+            return False
