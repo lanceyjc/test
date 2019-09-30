@@ -12,8 +12,8 @@ class TestDisplay:
         self.display_page.driver.quit()
         del self.display_page
 
-    @allure.MASTER_HELPER.testcase('测试搜索功能')
-    @allure.MASTER_HELPER.feature('测试用例：搜索')
+    @allure.MASTER_HELPER.testcase('测试显示功能')
+    @allure.MASTER_HELPER.feature('测试用例：显示')
     @pytest.mark.parametrize('a',['网络'])
     def test_mobile_search(self, a):
         allure.MASTER_HELPER.attach('描述', '点击放大镜')

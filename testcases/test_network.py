@@ -26,4 +26,3 @@ class TestNetwork:
         self.network_page.click_network_3g()
         self.network_page.screen_shot()
         self.network_page.click_back()
-        assert 0

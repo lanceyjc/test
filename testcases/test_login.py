@@ -1,14 +1,12 @@
 import allure
 import pytest
 from base.base_driver import android_driver
-from base.base_driver import env_config
 from base.base_yaml import get_yaml_data_file
 from base.base_yaml import data_with_key
 from page.login_page import LoginPage
 
 
 login_data = get_yaml_data_file('login_data')
-env_config()
 
 
 class TestLogin:
