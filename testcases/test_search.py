@@ -1,9 +1,9 @@
 import pytest
 from base.base_driver import android_driver
 from page.search_page import SearchPage
-from base.base_yaml import get_yaml_data
+from base.base_yaml import get_yaml_data_file
 
-search_data = get_yaml_data('search_data')
+search_data = get_yaml_data_file('search_data')
 
 
 class TestSearch:
