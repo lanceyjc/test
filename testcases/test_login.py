@@ -4,11 +4,14 @@ from base.base_driver import android_driver
 from base.base_yaml import get_yaml_data
 from page.login_page import LoginPage
 
+desired_caps = android_driver()[1]
 login_data = get_yaml_data('login_data')
 
-allure.MASTER_HELPER.environment(app_package='com.tpshop.malls')
-allure.MASTER_HELPER.environment(app_activity='.SPMainActivity')
-allure.MASTER_HELPER.environment(platform_name='Android')
+# allure.MASTER_HELPER.environment(app_package=desired_caps['appPackage'])
+# allure.MASTER_HELPER.environment(app_activity=desired_caps['appActivity'])
+# allure.MASTER_HELPER.environment(platform_name=desired_caps['platformName'])
+for cap in desired_caps:
+    allure.MASTER_HELPER.environment(cap)
 
 
 class TestLogin:
