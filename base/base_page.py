@@ -1,6 +1,8 @@
+# -*- coding:utf-8 -*-
 import base64
 import os
 import time
+
 
 from appium import webdriver
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
@@ -32,11 +34,14 @@ class PageAction:
         self.element(loc, swipe).clear()
 
     def is_toast_exist(self, text):
+        img_path = self.screen_shot()
         try:
             self.find_toast(text)
-            return True
+            # with open(img_path, 'r') as img:
+            #     allure.MASTER_HELPER.attach('toast cut', img.read(), allure.MASTER_HELPER.attach_type.PNG)
+            return img_path, True
         except TimeoutError:
-            return False
+            return img_path, False
 
     # 权限允许
     def click_allow_button(self, click_times):
@@ -113,7 +118,7 @@ class PageAction:
     def find_toast(self, text):
         xpath_loc = {'xpath': self.make_xpath_feature('text,' + text)}
         try:
-            toast = self.element(xpath_loc, swipe=False, timeout=3.0, frequency=0.2)
+            toast = self.element(xpath_loc, swipe=False, timeout=2.0, frequency=0.2)
         except TimeoutError:
             raise NoSuchElementException
         else:
@@ -121,12 +126,13 @@ class PageAction:
 
     # 截图
     def screen_shot(self):
-        time.sleep(0.5)
+        time.sleep(0.6)
         current_time = time.strftime("%Y-%m-%d_%H_%M_%S", time.localtime(time.time()))
         pic_path = (os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-                    + '\\reports\\screenshots\\'
+                    + '\\screenshot\\'
                     + current_time + '.png')
         self.driver.get_screenshot_as_file(pic_path)
+        return pic_path
 
     # 发送数据到手机
     def send_file(self, path, data_source):

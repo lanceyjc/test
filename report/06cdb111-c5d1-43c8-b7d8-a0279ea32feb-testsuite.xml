@@ -1,0 +1,101 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1570034372612" stop="1570034463186">
+  <name>testcases</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1570034372612" status="passed" stop="1570034390269">
+      <description>test_001: 输入正确账号和正确密码</description>
+      <name>test_login.TestLogin.test_login[account0]</name>
+      <attachments>
+        <attachment source="2572e26c-e372-450b-8a9a-5d6bc2fc2112-attachment.txt" title="输入账号" type="text/plain"/>
+        <attachment source="862e94b4-a6a1-49ec-a7ad-a13bffb0ed03-attachment.txt" title="输入密码" type="text/plain"/>
+        <attachment source="357ce73d-9f22-480b-a55c-4ebef9780607-attachment.txt" title="断言toast" type="text/plain"/>
+        <attachment source="f9c01072-c4f8-4675-a414-5273ef2e497a-attachment.png" title="断言截图" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="feature" value="测试用例：登录功能"/>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="3076-MainThread"/>
+        <label name="host" value="DESKTOP-QCTRQ3R"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1570034391088" status="passed" stop="1570034408154">
+      <description>test_002: 输入账号后加空格和正确密码</description>
+      <name>test_login.TestLogin.test_login[account1]</name>
+      <attachments>
+        <attachment source="5be4c078-93d3-4538-88e9-cdb70d312bf6-attachment.txt" title="输入账号" type="text/plain"/>
+        <attachment source="748fde80-a7de-4e3c-8b7b-ebb8e81bf3cd-attachment.txt" title="输入密码" type="text/plain"/>
+        <attachment source="d0715da6-1599-4074-aa10-34f0f2a8f065-attachment.txt" title="断言toast" type="text/plain"/>
+        <attachment source="9a778e26-7523-422a-8837-915d11ebb268-attachment.png" title="断言截图" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="feature" value="测试用例：登录功能"/>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="3076-MainThread"/>
+        <label name="host" value="DESKTOP-QCTRQ3R"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1570034408783" status="passed" stop="1570034426530">
+      <description>test_003: 输入账号中间加空格和正确密码</description>
+      <name>test_login.TestLogin.test_login[account2]</name>
+      <attachments>
+        <attachment source="c146287f-b8f4-4030-be50-6e12bc71ad3a-attachment.txt" title="输入账号" type="text/plain"/>
+        <attachment source="27a92f98-7481-4ad9-adac-53b1d4e44559-attachment.txt" title="输入密码" type="text/plain"/>
+        <attachment source="b6a95bc2-8e3f-4d08-af10-653bbd47eda3-attachment.txt" title="断言toast" type="text/plain"/>
+        <attachment source="d4cb7c76-d379-4d96-82dd-a37c9e19f2f2-attachment.png" title="断言截图" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="feature" value="测试用例：登录功能"/>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="3076-MainThread"/>
+        <label name="host" value="DESKTOP-QCTRQ3R"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1570034427154" status="passed" stop="1570034444964">
+      <description>test_004: 输入错误账号和正确密码</description>
+      <name>test_login.TestLogin.test_login[account3]</name>
+      <attachments>
+        <attachment source="1b783bcf-d08d-4ab8-8b80-47224b3abde6-attachment.txt" title="输入账号" type="text/plain"/>
+        <attachment source="154ae1cd-2ff4-4132-bbd2-4aa66719157b-attachment.txt" title="输入密码" type="text/plain"/>
+        <attachment source="7c1010f6-7c1e-44c8-ac82-d92addd1c543-attachment.txt" title="断言toast" type="text/plain"/>
+        <attachment source="432a0261-3890-4684-b843-bcdddcdca0ab-attachment.png" title="断言截图" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="feature" value="测试用例：登录功能"/>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="3076-MainThread"/>
+        <label name="host" value="DESKTOP-QCTRQ3R"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+    <test-case start="1570034445593" status="passed" stop="1570034463186">
+      <description>test_005: 输入正确账号和错误密码</description>
+      <name>test_login.TestLogin.test_login[account4]</name>
+      <attachments>
+        <attachment source="8d68a215-8c0b-4ba8-b9ee-48e4aaf5d238-attachment.txt" title="输入账号" type="text/plain"/>
+        <attachment source="d84ea134-f8cc-45aa-b2c2-895342d8372c-attachment.txt" title="输入密码" type="text/plain"/>
+        <attachment source="cc85b1cd-13e5-48bd-8f05-875507d23d2f-attachment.txt" title="断言toast" type="text/plain"/>
+        <attachment source="f8faab9d-8523-4da3-bdff-91b5505b58a5-attachment.png" title="断言截图" type="image/png"/>
+      </attachments>
+      <labels>
+        <label name="feature" value="测试用例：登录功能"/>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="3076-MainThread"/>
+        <label name="host" value="DESKTOP-QCTRQ3R"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

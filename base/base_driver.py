@@ -3,6 +3,7 @@
 """
 import allure
 
+# 'automationName': 'Uiautomator2'
 
 def android_driver():
     desired_caps = {'platformName': 'Android',

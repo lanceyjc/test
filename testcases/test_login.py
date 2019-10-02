@@ -35,4 +35,8 @@ class TestLogin:
         # click the login button
         self.login_page.click_login_button()
         allure.MASTER_HELPER.attach('断言toast', toast)
-        assert self.login_page.is_toast_exist(toast)
+        img_path, toast_flag = self.login_page.is_toast_exist(toast)
+        with open(img_path, 'rb') as img_data:
+            img = img_data.read()
+        allure.MASTER_HELPER.attach('断言截图', img, allure.MASTER_HELPER.attach_type.PNG)
+        assert toast_flag
