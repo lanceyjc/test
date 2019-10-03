@@ -106,3 +106,7 @@ venv.bak/
 # pytest
 report
 .idea
+screenshot
+testcases/__pycache__
+page/__pycache__
+base/__pycache__
