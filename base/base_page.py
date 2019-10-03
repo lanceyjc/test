@@ -2,6 +2,7 @@
 import base64
 import os
 import time
+import allure
 
 
 from appium import webdriver
@@ -34,14 +35,17 @@ class PageAction:
         self.element(loc, swipe).clear()
 
     def is_toast_exist(self, text):
-        img_path = self.screen_shot()
+        toast_flag = None
         try:
             self.find_toast(text)
-            # with open(img_path, 'r') as img:
-            #     allure.MASTER_HELPER.attach('toast cut', img.read(), allure.MASTER_HELPER.attach_type.PNG)
-            return img_path, True
+            toast_flag = True
         except TimeoutError:
-            return img_path, False
+            toast_flag = False
+        finally:
+            img_path = self.screen_shot(text)
+            with open(img_path, 'rb') as img:
+                allure.MASTER_HELPER.attach('toast cut', img.read(), allure.MASTER_HELPER.attach_type.PNG)
+            return toast_flag
 
     # 权限允许
     def click_allow_button(self, click_times):
@@ -125,11 +129,11 @@ class PageAction:
             return toast.text
 
     # 截图
-    def screen_shot(self):
+    def screen_shot(self, text):
         time.sleep(0.6)
         current_time = time.strftime("%Y-%m-%d_%H_%M_%S", time.localtime(time.time()))
         pic_path = (os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-                    + '\\screenshot\\'
+                    + '\\screenshot\\' + text
                     + current_time + '.png')
         self.driver.get_screenshot_as_file(pic_path)
         return pic_path
