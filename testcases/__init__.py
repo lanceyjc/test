@@ -2,7 +2,7 @@ import os, sys
 sys.path.append(os.getcwd())
 
 from base.clear_shot import clear_shot
-from base.base_driver import env_config
+# from base.base_driver import env_config
 
 
 def make_screenshot_dir():
@@ -13,5 +13,5 @@ def make_screenshot_dir():
         clear_shot()
 
 
-env_config()
+# env_config()
 make_screenshot_dir()

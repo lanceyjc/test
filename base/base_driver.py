@@ -3,14 +3,14 @@
 """
 import allure
 
-# 'automationName': 'Uiautomator2'
+# 'automationName': 'Uiautomator2'com.android.settings/.Settings$SystemDashboardActivity
 
 def android_driver():
     desired_caps = {'platformName': 'Android',
-                    'platformVersion': '5.1',
-                    'appPackage': 'com.tpshop.malls',
-                    'appActivity': '.SPMainActivity',
-                    'deviceName': '192.168.182.105:5555',
+                    'platformVersion': '9.0',
+                    'appPackage': 'com.android.settings',
+                    'appActivity': '.Settings$SystemDashboardActivity',
+                    'deviceName': '192.168.176.101:5555',
                     'unicodeKeyboard': True,
                     'resetKeyboard': True,
                     'automationName': 'Uiautomator2'}
@@ -30,10 +30,10 @@ def ios_driver():
     return url, desired_caps
 
 
-def env_config():
-    desired_caps = android_driver()[1]
-    allure.MASTER_HELPER.environment(app_package=desired_caps['appPackage'])
-    allure.MASTER_HELPER.environment(app_activity=desired_caps['appActivity'])
-    allure.MASTER_HELPER.environment(platform_name=desired_caps['platformName'])
-    allure.MASTER_HELPER.environment(platform_version=desired_caps['platformVersion'])
-    allure.MASTER_HELPER.environment(device_name=desired_caps['deviceName'])
+# def env_config():
+#     desired_caps = android_driver()[1]
+#     allure.description(app_package=desired_caps['appPackage'])
+#     allure.description(app_activity=desired_caps['appActivity'])
+#     allure.description(platform_name=desired_caps['platformName'])
+#     allure.description(platform_version=desired_caps['platformVersion'])
+#     allure.description(device_name=desired_caps['deviceName'])

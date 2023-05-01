@@ -14,7 +14,7 @@ class TestAbout:
 
     def test_mobile_info(self):
         self.about_page.click_mobile_info()
-        self.about_page.screen_shot()
+        self.about_page.screen_shot("mobile_info")
         self.about_page.mobile_back_key()
 
     # @pytest.mark.parametrize('text', ['Samsung'])

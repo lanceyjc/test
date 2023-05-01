@@ -3,7 +3,7 @@ from base.base_page import PageAction
 
 class AboutPage(PageAction):
     about_button = {'xpath': 'text,关于手机'}
-    mobile_info_button = {'xpath': 'text,状态信息'}
+    mobile_info_button = {'xpath': 'text,Android 版本'}
 
     def __init__(self, driver):
         PageAction.__init__(self, driver)
@@ -13,7 +13,7 @@ class AboutPage(PageAction):
         self.click(self.mobile_info_button)
 
     def find_mobile_info(self, text):
-        for ele in self.elements({'id': 'android:id/summary'}):
+        for ele in self.element({'id': 'android:id/summary'}, swipe=True):
             if text in ele.text:
                 break
         else:
